@@ -3,7 +3,9 @@ package main;
 import animal_qualities.Flying;
 import animal_qualities.Swimming;
 import animal_qualities.Walking;
+import animals.*;
 import main.Animal;
+import types.Primate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,9 +88,10 @@ public class Zoo
         for(Animal a : animals)
         {
             msg += a.getName() + ": \n       " 
-            + a.makeNoise() + "\n";
+            + a.makeNoise() + "\n" + "\n";
         }
         return msg;
+
     }
 
     public static String lookDown(List<Animal> animals)
@@ -171,11 +174,20 @@ public class Zoo
      */
     public static void populateAnimals(List<Animal> animals)
     {
+        Chimpanzee chip = new Chimpanzee("Chip the Chimpanzee");
+        Parrot peter = new Parrot("Peter the Parrot");
+        Orangutan louie = new Orangutan("King Louie the Orangutan");
+        Zebra marty = new Zebra("Marty the Zebra");
+        Alligator ticktock = new Alligator("Tick-Tock the Alligator");
+        Ring_Tailed_Lemur kingjulian = new Ring_Tailed_Lemur("King Julian the Ring-Tailed Lemur");
 
-        Primate hairy = new Primate();
-        animals.add(hairy);
-        Chimpanzee george = new Chimpanzee();
-        animals.add(george);
+        animals.add(chip);
+        animals.add(peter);
+        animals.add(louie);
+        animals.add(marty);
+        animals.add(ticktock);
+        animals.add(kingjulian);
+
 
     }
 }

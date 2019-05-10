@@ -1,3 +1,5 @@
+package types;
+
 import animal_qualities.Swimming;
 import main.Animal;
 
@@ -14,11 +16,11 @@ public class Reptile extends Animal implements Swimming
 
     public String makeNoise()
     {
-        return "(Reptile Noises?)";
+        return "(types.Reptile Noises?)";
     }
     public String eat()
     {
-        return "Reptile Food";
+        return "types.Reptile Food";
     }
     public String swim() {return "Just keep swimming, just keep swimming, just keep swimming...";}
 }

@@ -1,3 +1,5 @@
+package types;
+
 import animal_qualities.Walking;
 import main.Animal;
 

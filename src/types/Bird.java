@@ -1,3 +1,5 @@
+package types;
+
 import animal_qualities.Flying;
 import main.Animal;
 
@@ -7,6 +9,7 @@ public class Bird extends Animal implements Flying
     {
         super("Birds", "Birds fly in de sky.");
     }
+
     public Bird(String name, String desc)
     {
         super(name, desc);
@@ -16,9 +19,11 @@ public class Bird extends Animal implements Flying
     {
         return "SQRAAAAAAAAAAW";
     }
+
     public String eat()
     {
         return "worms, the souls of the damned, and seeds";
     }
+
     public String fly() {return "Fly around with ease";}
 }

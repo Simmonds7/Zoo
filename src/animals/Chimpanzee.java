@@ -1,8 +1,10 @@
- 
+package animals;
 
+
+import types.Primate;
 
 /**
- * Write a description of class Chimpanzee here.
+ * Write a description of class animals.Chimpanzee here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -13,7 +15,7 @@ public class Chimpanzee extends Primate
     private String age;
 
     /**
-     * Constructor for objects of class Orangutan
+     * Constructor for objects of class animals.Chimpanzee
      */
     public Chimpanzee()
     {
@@ -21,11 +23,13 @@ public class Chimpanzee extends Primate
         this.age = "very young";
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * 
-     */
+    public Chimpanzee(String name)
+    {
+        super(name, "brown and sometimes mean");
+        this.age = "very young";
+    }
+
+
     @Override
         public String makeNoise()
     {
