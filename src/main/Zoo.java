@@ -1,9 +1,13 @@
- 
+package main;
+
+import animal_qualities.Flying;
+import animal_qualities.Swimming;
+import animal_qualities.Walking;
+import main.Animal;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.Random;
 import java.util.Scanner;
 /**
  * Test
@@ -17,7 +21,7 @@ public class Zoo
     {
         List<Animal> animals = new ArrayList<Animal>();
 
-        System.out.println("Welcome to the Zoo!\n");
+        System.out.println("Welcome to the main.Zoo!\n");
         System.out.print("Building the cages");
         delayDots();
         System.out.print("Populating the animals");
@@ -42,18 +46,18 @@ public class Zoo
                 case "visit cages" : 
                 msg = visitCages(animals);
                 break;
-//                case "look up" :
-//                msg = lookUp(animals);
-//                break;
+                case "look up" :
+                msg = lookUp(animals);
+                break;
                 case "look around" :
                 msg = lookAround(animals);
                 break;
                 case "listen" :
                 msg = listen(animals);
                 break;
-//                case "look down":
-//                msg = lookDown(animals);
-//                break;
+                case "look down":
+                msg = lookDown(animals);
+                break;
                 default : msg = "You flail helplessly with indecision.";
             }
             System.out.println("\n" + msg);
@@ -87,22 +91,22 @@ public class Zoo
         return msg;
     }
 
-//    public static String lookDown(List<Animal> animals)
-//    {
-//        String msg = "";
-//
-//        for(Animal a : animals)
-//        {
-//            if(a instanceof Swimming)
-//            {
-//                Swimming f = (Swimming) a;
-//                msg += a.getName() + ": \n       "
-//                + f.swim() + "\n";
-//            }
-//        }
-//        return msg;
-//
-//    }
+    public static String lookDown(List<Animal> animals)
+    {
+        String msg = "";
+
+        for(Animal a : animals)
+        {
+            if(a instanceof Swimming)
+            {
+                Swimming f = (Swimming) a;
+                msg += a.getName() + ": \n       "
+                + f.swim() + "\n";
+            }
+        }
+        return msg;
+
+    }
 
     public static String lookAround(List<Animal> animals)
     {
@@ -121,22 +125,22 @@ public class Zoo
 
     }
 
-//    public static String lookUp(List<Animal> animals)
-//    {
-//        String msg = "";
-//
-//        for(Animal a : animals)
-//        {
-//            if(a instanceof Flying)
-//            {
-//                Flying f = (Flying) a;
-//                msg += a.getName() + ": \n       "
-//                + f.fly() + "\n";
-//            }
-//        }
-//        return msg;
-//
-//    }
+    public static String lookUp(List<Animal> animals)
+    {
+        String msg = "";
+
+        for(Animal a : animals)
+        {
+            if(a instanceof Flying)
+            {
+                Flying f = (Flying) a;
+                msg += a.getName() + ": \n       "
+                + f.fly() + "\n";
+            }
+        }
+        return msg;
+
+    }
 
     /**
      * This prints an ellipses with 1 second between each period

@@ -1,3 +1,6 @@
+import animal_qualities.Walking;
+import main.Animal;
+
 public class Primate extends Animal implements Walking
     {
         public Primate()
