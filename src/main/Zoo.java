@@ -5,6 +5,9 @@ import animal_qualities.Swimming;
 import animal_qualities.Walking;
 import animals.*;
 import main.Animal;
+import retail.Concessions;
+import retail.Gift_Shop;
+import retail.Wallet;
 import types.Primate;
 
 import java.util.ArrayList;
@@ -42,10 +45,17 @@ public class Zoo
             switch(text)
             {
                 case "help" : 
-                msg = "So far we can visit cages, listen, leave \n"+
+                msg = "So far we can visit cages, listen, add money to wallet, check balance, leave \n"+
                 "and ask for help.";
                 break;
-                case "visit cages" : 
+                case "add money to wallet" :
+                Wallet.setWallet();
+                msg = "Wallet balance updated.";
+                break;
+                case "check balance" :
+                msg = "Your current balance is " + Wallet.getWallet() + "$";
+                break;
+                case "visit cages" :
                 msg = visitCages(animals);
                 break;
                 case "look up" :
@@ -60,6 +70,14 @@ public class Zoo
                 case "look down":
                 msg = lookDown(animals);
                 break;
+                case "concessions" :
+                Concessions.ConcessionStands();
+                msg = "Your balance after concessions is " + Wallet.getWallet() + "$.";
+                break;
+                case "giftshop" :
+                Gift_Shop.GiftShop();
+                msg = "Your balance after visiting the Gift Shop is " + Wallet.getWallet() + "$.";
+                break;
                 default : msg = "You flail helplessly with indecision.";
             }
             System.out.println("\n" + msg);
@@ -67,9 +85,14 @@ public class Zoo
             System.out.println("\nYou are standing in a wondrous zoo. What would you like to do?\n");
             text = in.nextLine();
         }
-
-        System.out.println(Math.random() < .8 ? "\nHave a nice day!  Hope you come back!" : "\nAn escaped lion eats you on your way out.  Sorry!");
-
+        if (Wallet.getWallet() < 0)
+        {
+            System.out.println("Hey punk! You owe us " + Math.abs(Wallet.getWallet()) + "$!");
+        }
+        else
+        {
+            System.out.println(Math.random() < .8 ? "\nHave a nice day!  Hope you come back!" : "\nAn escaped lion eats you on your way out.  Sorry!");
+        }
     }
 
     public static String visitCages(List<Animal> animals)
