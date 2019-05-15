@@ -45,7 +45,7 @@ public class Zoo
             switch(text)
             {
                 case "help" : 
-                msg = "So far we can visit cages, listen, add money to wallet, check balance, leave \n"+
+                msg = "So far we can visit cages, listen, add money to wallet, check balance, concessions, giftshop, leave \n"+
                 "and ask for help.";
                 break;
                 case "add money to wallet" :
